@@ -1,5 +1,6 @@
 # cracking-the-coding-interview
 
-- [ ] Chap. 01 - Arrays and Strings
-- [ ] Chap. 02 - Linked Lists
+- [X] Chap. 01 - Arrays and Strings
+- [X] Chap. 02 - Linked Lists
+- [ ] Chap. 03 - Stacks and Queues
 - [ ] ...
