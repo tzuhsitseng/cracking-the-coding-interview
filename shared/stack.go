@@ -1,17 +1,17 @@
 package shared
 
-type StackOfListNode struct {
+type ListNodeStack struct {
 	stack []*ListNode
 }
 
-func (s *StackOfListNode) push(elements ...*ListNode) {
+func (s *ListNodeStack) push(elements ...*ListNode) {
 	if s.stack == nil {
 		s.stack = make([]*ListNode, 0)
 	}
 	s.stack = append(s.stack, elements...)
 }
 
-func (s *StackOfListNode) pop() *ListNode {
+func (s *ListNodeStack) pop() *ListNode {
 	l := len(s.stack)
 	if l == 0 {
 		return nil
