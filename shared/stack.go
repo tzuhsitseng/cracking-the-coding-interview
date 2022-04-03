@@ -4,6 +4,12 @@ type ListNodeStack struct {
 	stack []*ListNode
 }
 
+func NewListNodeStack() *ListNodeStack {
+	return &ListNodeStack{
+		stack: make([]*ListNode, 0),
+	}
+}
+
 func (s *ListNodeStack) push(element *ListNode) {
 	if s.stack == nil {
 		s.stack = make([]*ListNode, 0)
