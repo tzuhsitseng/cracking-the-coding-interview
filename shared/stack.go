@@ -39,3 +39,45 @@ func (s *ListNodeStack) peek() *ListNode {
 
 	return s.stack[len(s.stack)-1]
 }
+
+//
+
+type TreeNodeStack struct {
+	stack []*TreeNode
+}
+
+func NewTreeNodeStack() *TreeNodeStack {
+	return &TreeNodeStack{
+		stack: make([]*TreeNode, 0),
+	}
+}
+
+func (s *TreeNodeStack) push(element *TreeNode) {
+	if s.stack == nil {
+		s.stack = make([]*TreeNode, 0)
+	}
+	s.stack = append(s.stack, element)
+}
+
+func (s *TreeNodeStack) pop() *TreeNode {
+	if s.isEmpty() {
+		return nil
+	}
+
+	l := len(s.stack)
+	result := s.stack[l-1]
+	s.stack = s.stack[:l-1]
+	return result
+}
+
+func (s *TreeNodeStack) isEmpty() bool {
+	return len(s.stack) == 0
+}
+
+func (s *TreeNodeStack) peek() *TreeNode {
+	if s.isEmpty() {
+		return nil
+	}
+
+	return s.stack[len(s.stack)-1]
+}
