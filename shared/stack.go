@@ -81,3 +81,45 @@ func (s *TreeNodeStack) peek() *TreeNode {
 
 	return s.stack[len(s.stack)-1]
 }
+
+//
+
+type StringStack struct {
+	stack []string
+}
+
+func NewStringStack() *StringStack {
+	return &StringStack{
+		stack: make([]string, 0),
+	}
+}
+
+func (s *StringStack) push(element string) {
+	if s.stack == nil {
+		s.stack = make([]string, 0)
+	}
+	s.stack = append(s.stack, element)
+}
+
+func (s *StringStack) pop() *string {
+	if s.isEmpty() {
+		return nil
+	}
+
+	l := len(s.stack)
+	result := s.stack[l-1]
+	s.stack = s.stack[:l-1]
+	return &result
+}
+
+func (s *StringStack) isEmpty() bool {
+	return len(s.stack) == 0
+}
+
+func (s *StringStack) peek() *string {
+	if s.isEmpty() {
+		return nil
+	}
+
+	return &s.stack[len(s.stack)-1]
+}
