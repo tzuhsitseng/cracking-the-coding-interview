@@ -77,3 +77,43 @@ func (q *TreeNodeQueue) peek() *TreeNode {
 func (q *TreeNodeQueue) isEmpty() bool {
 	return len(q.queue) == 0
 }
+
+//
+
+type IntQueue struct {
+	queue []*int
+}
+
+func NewIntQueue() *IntQueue {
+	return &IntQueue{
+		queue: make([]*int, 0),
+	}
+}
+
+func (q *IntQueue) enqueue(element int) {
+	if q.queue == nil {
+		q.queue = make([]*int, 0)
+	}
+	q.queue = append(q.queue, &element)
+}
+
+func (q *IntQueue) dequeue() *int {
+	if len(q.queue) == 0 {
+		return nil
+	}
+	result := q.queue[0]
+	q.queue = q.queue[1:]
+	return result
+}
+
+func (q *IntQueue) peek() *int {
+	if len(q.queue) == 0 {
+		return nil
+	}
+	result := q.queue[0]
+	return result
+}
+
+func (q *IntQueue) isEmpty() bool {
+	return len(q.queue) == 0
+}
